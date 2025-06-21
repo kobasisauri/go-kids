@@ -1,26 +1,246 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  word-wrap: break-word;
+  font-weight: 400;
+  background-color: #fff;
+  color: #6f6b80;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 0px 40px;
+  position: relative;
+  clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.3;
+  font-family: "Jost", sans-serif;
+  color: #000;
+}
+
+h1 {
+  font-size: 45px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
+
+/* Color Classes */
+.greenText {
+  color: #1cbe59 !important;
+}
+.purpleText {
+  color: #8067f0 !important;
+}
+.orangeText {
+  color: #f75023 !important;
+}
+.yellowText {
+  color: #f0c45c !important;
+}
+
+.orangeBackground {
+  background-color: #fedfd7 !important;
+}
+.greenBackground {
+  background-color: #ddf5e6 !important;
+}
+.purpleBackground {
+  background-color: #ece8fd !important;
+}
+
+/* All Wrap */
+.dizme_tm_all_wrap {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+}
+
+/* Section */
+.dizme_tm_section {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+}
+
+/* Button */
+.dizme_tm_button {
+  display: inline-block;
+  position: relative;
+}
+
+.dizme_tm_button a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  padding: 10px 40px 9px 40px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-family: "Jost", sans-serif;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: 2px solid #000;
+}
+
+.dizme_tm_button span {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.dizme_tm_button a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.dizme_tm_button a:hover:before {
+  width: 100%;
+}
+
+.dizme_tm_button a:hover span {
+  color: #fff;
+}
+
+/* Main Title */
+.dizme_tm_main_title {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  margin: 0 auto 70px auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+.dizme_tm_main_title span {
+  color: #8067f0;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Jost", sans-serif;
+  margin-bottom: 11px;
+  display: block;
+}
+
+.dizme_tm_main_title h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1600px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .container {
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+
+  .dizme_tm_main_title span {
+    font-size: 20px;
+  }
+  .dizme_tm_main_title h3 {
+    font-size: 30px;
+  }
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #999 #fff;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 6px;
+  border: 3px solid #fff;
 }
